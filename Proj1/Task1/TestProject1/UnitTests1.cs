@@ -6,6 +6,7 @@ namespace Tut2_s20123_Tests
     {
         private readonly IShape sphere = new Sphere(5);
         private readonly IShape cylinder = new Cylinder(5, 12);
+        private readonly IShape cylinderNegative = new Cylinder(-5, 12);
         private readonly IShape rectangle = new Rectangle(6, 8);
         private readonly IShape cube = new Cube(4);
 
@@ -37,6 +38,12 @@ namespace Tut2_s20123_Tests
         public void TestCylinderCalculateArea()
         {
             Assert.That(cylinder.CalculateArea(), Is.EqualTo(534.070).Within(0.001));
+        }
+
+        [Test]
+        public void TestNegativeCylinderCalculateArea()
+        {
+            Assert.That(cylinderNegative.CalculateArea(), Is.EqualTo(534.070).Within(0.001));
         }
 
         [Test]
